@@ -1,0 +1,30 @@
+scalar Date
+scalar DateTime
+
+type Session {
+  id: ID
+  task: String
+  startTime: DateTime!
+  endTime: DateTime!
+}
+
+type Pomodoro {
+  id: ID!
+  day: Date!
+  sessions: [Session!]!
+}
+
+input AddPomodoroInput {
+  day: Date!
+  task: String
+  startTime: DateTime!
+  endTime: DateTime!
+}
+
+type Query {
+  allPomodoros: [Pomodoro!]!
+}
+
+type Mutation {
+  addPomodoro(input: AddPomodoroInput!): Pomodoro!
+}
