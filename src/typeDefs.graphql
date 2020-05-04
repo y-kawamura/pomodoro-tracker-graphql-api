@@ -23,7 +23,7 @@ input AddPomodoroInput {
 
 type Query {
   allPomodoros: [Pomodoro!]!
-  todayPomodoro: Pomodoro!
+  todayPomodoro: Pomodoro
 }
 
 type Mutation {
